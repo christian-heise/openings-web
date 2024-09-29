@@ -1,94 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Openings Mastermind</title>
+    <title>Datenschutzerklärung</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-        }
-
-        /* Header styling */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             padding: 20px;
-            border-bottom: 2px solid #e0e0e0; /* Separation line */
         }
-
-        .header-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        /* Flag buttons styling */
-        .flags {
+        header {
             display: flex;
-            gap: 10px; /* Adds space between the flags */
+            justify-content: flex-end;
+            padding: 10px 20px;
+            background-color: #f5f5f5;
         }
-
-        .flag-btn {
+        header span {
             cursor: pointer;
-            font-size: 24px;
-            border: none;
-            background: none;
-            padding: 0 10px; /* Padding to make flags look like buttons */
+            font-size: 30px;
+            margin-left: 15px; /* Spacing between flags */
+            padding: 10px; /* Padding inside the buttons */
+            border: 2px solid transparent; /* Initial no border */
+            border-radius: 5px; /* Rounded corners to look like buttons */
+            transition: all 0.3s ease; /* Smooth transition for hover effect */
         }
-
-        /* Main title styling */
-        .main-title {
-            text-align: center;
-            margin-top: 40px;
+        header span:hover {
+            border-color: #ccc; /* Add a border on hover to make it look clickable */
+            background-color: #f0f0f0; /* Slight background change on hover */
         }
-
-        .main-title h1 {
-            font-size: 32px;
-        }
-
-        .main-title p {
-            font-size: 16px;
-            color: #666;
-        }
-
-        /* Content styling */
         .content {
-            padding: 20px;
             max-width: 800px;
             margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 28px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header with Title and Flag Buttons -->
-    <div class="header">
-        <div class="header-title">Apps by Christian</div>
-        <div class="flags">
-            <button class="flag-btn" onclick="switchLanguage('de')">🇩🇪</button>
-            <button class="flag-btn" onclick="switchLanguage('en')">🇺🇸</button>
-        </div>
-    </div>
+<!-- Language Switcher -->
+<header>
+    <div class="header-title">Apps by Christian</div>
 
-    <!-- Main Title Section -->
-    <div class="main-title">
-        <h1>Openings Mastermind</h1>
-        <p>Select your language to view the content of the privacy policy.</p>
+    <div class="flags">
+        <span id="germanFlag" title="Deutsch">🇩🇪</span>
+        <span id="englishFlag" title="English">🇺🇸</span>
     </div>
+</header>
 
-    <script>
-        function switchLanguage(lang) {
-            if (lang === 'de') {
-                window.location.href = 'german.html'; // Redirect to German version
-            } else if (lang === 'en') {
-                window.location.href = 'english.html'; // Redirect to English version
-            }
-        }
-    </script>
+<!-- Content Section -->
+<div class="content" id="content">
+    <!-- The content will be loaded dynamically from external files -->
+</div>
+
+<script>
+    // Function to load content dynamically
+    function loadContent(language) {
+        let url = language === 'de' ? 'german.html' : 'english.html';
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('content').innerHTML = data;
+            });
+    }
+
+    // Default load German content on page load
+    window.onload = () => loadContent('de');
+
+    // Event listeners for language switching
+    document.getElementById('germanFlag').addEventListener('click', () => loadContent('de'));
+    document.getElementById('englishFlag').addEventListener('click', () => loadContent('en'));
+</script>
 
 </body>
 </html>
