@@ -1,82 +1,99 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutzerklärung</title>
+    <title>Openings Mastermind – Privacy Policy</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
-        header {
+
+        /* Header styling */
+        .header {
             display: flex;
-            justify-content: flex-end;
-            padding: 10px 20px;
-            background-color: #f5f5f5;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 2px solid #e0e0e0; /* Separation line */
         }
-        header span {
+
+        .header-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Flag buttons styling */
+        .flags {
+            display: flex;
+            gap: 10px; /* Adds space between the flags */
+        }
+
+        .flag-btn {
             cursor: pointer;
-            font-size: 30px;
-            margin-left: 15px; /* Spacing between flags */
-            padding: 10px; /* Padding inside the buttons */
-            border: 2px solid transparent; /* Initial no border */
-            border-radius: 5px; /* Rounded corners to look like buttons */
-            transition: all 0.3s ease; /* Smooth transition for hover effect */
+            font-size: 24px;
+            border: none;
+            background: none;
+            padding: 0 10px; /* Padding to make flags look like buttons */
         }
-        header span:hover {
-            border-color: #ccc; /* Add a border on hover to make it look clickable */
-            background-color: #f0f0f0; /* Slight background change on hover */
+
+        /* Main title styling */
+        .main-title {
+            text-align: center;
+            margin-top: 40px;
         }
+
+        .main-title h1 {
+            font-size: 32px;
+        }
+
+        .main-title p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Content styling */
         .content {
+            padding: 20px;
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            font-size: 28px;
-        }
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .hidden {
-            display: none;
         }
     </style>
 </head>
 <body>
 
-<!-- Language Switcher -->
-<header>
-    <span id="germanFlag" title="Deutsch">🇩🇪</span>
-    <span id="englishFlag" title="English">🇺🇸</span>
-</header>
+    <!-- Header with Title and Flag Buttons -->
+    <div class="header">
+        <div class="header-title">Apps by Christian</div>
+        <div class="flags">
+            <button class="flag-btn" onclick="switchLanguage('de')">🇩🇪</button>
+            <button class="flag-btn" onclick="switchLanguage('en')">🇺🇸</button>
+        </div>
+    </div>
 
-<!-- Content Section -->
-<div class="content" id="content">
-    <!-- The content will be loaded dynamically from external files -->
-</div>
+    <!-- Main Title Section -->
+    <div class="main-title">
+        <h1>Openings Mastermind – Privacy Policy</h1>
+        <p>Personal data (usually referred to just as „data“ below) will only be processed by us to the extent necessary...</p>
+    </div>
 
-<script>
-    // Function to load content dynamically
-    function loadContent(language) {
-        let url = language === 'de' ? 'german.html' : 'english.html';
-        fetch(url)
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('content').innerHTML = data;
-            });
-    }
+    <!-- Content Section -->
+    <div class="content">
+        <!-- Your privacy policy content goes here -->
+    </div>
 
-    // Default load German content on page load
-    window.onload = () => loadContent('de');
-
-    // Event listeners for language switching
-    document.getElementById('germanFlag').addEventListener('click', () => loadContent('de'));
-    document.getElementById('englishFlag').addEventListener('click', () => loadContent('en'));
-</script>
+    <script>
+        function switchLanguage(lang) {
+            if (lang === 'de') {
+                window.location.href = 'de.html'; // Link to German version
+            } else if (lang === 'en') {
+                window.location.href = 'index.html'; // Link to English version
+            }
+        }
+    </script>
 
 </body>
 </html>
