@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+        }
+        header img {
+            cursor: pointer;
+            margin-left: 10px;
+            width: 30px;
+            height: auto;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 28px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Language Switcher -->
+<header>
+    <img src="germany-flag.png" alt="Deutsch" id="germanFlag">
+    <img src="us-flag.png" alt="English" id="englishFlag">
+</header>
+
+<!-- Content Section -->
+<div class="content">
+    <!-- German Content -->
+    <div id="germanContent">
+        <h1>Openings Mastermind – Datenschutzerklärung</h1>
+        <p>Personenbezogene Daten (nachfolgend zumeist nur „Daten“ genannt) werden von uns nur im Rahmen der Erforderlichkeit sowie zum Zwecke der Bereitstellung eines funktionsfähigen und nutzerfreundlichen Appauftritts, inklusive seiner Inhalte und der dort angebotenen Leistungen, verarbeitet.</p>
+        <p>Gemäß Art. 4 Ziffer 1. der Verordnung (EU) 2016/679, also der Datenschutz-Grundverordnung (nachfolgend nur „DSGVO“ genannt), gilt als „Verarbeitung“ jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführter Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten, wie das Erheben, das Erfassen, das Ordnen, die Speicherung, die Anpassung oder Veränderung, das Auslesen, das Abfragen, die Verwendung, die Offenlegung durch Übermittlung, Verbreitung oder eine andere Form der Bereitstellung, den Abgleich oder die Verknüpfung, die Einschränkung, das Löschen oder die Vernichtung.</p>
+        <p>Mit der nachfolgenden Datenschutzerklärung informieren wir Sie insbesondere über Art, Umfang, Zweck, Dauer und Rechtsgrundlage der Verarbeitung personenbezogener Daten, soweit wir entweder allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung entscheiden. Zudem informieren wir Sie nachfolgend über die von uns zu Optimierungszwecken sowie zur Steigerung der Nutzungsqualität eingesetzten Fremdkomponenten, soweit hierdurch Dritte Daten in wiederum eigener Verantwortung verarbeiten.</p>
+    </div>
+
+    <!-- English Content -->
+    <div id="englishContent" class="hidden">
+        <h1>Openings Mastermind – Privacy Policy</h1>
+        <p>Personal data (hereinafter referred to as "data") is only processed by us as necessary for the provision of a functional and user-friendly app presence, including its content and the services offered there.</p>
+        <p>According to Art. 4 No. 1 of Regulation (EU) 2016/679, the General Data Protection Regulation (hereinafter referred to as "GDPR"), "processing" means any operation or set of operations which is performed on personal data, whether or not by automated means, such as collection, recording, organization, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure, or destruction.</p>
+        <p>With the following privacy policy, we inform you in particular about the type, scope, purpose, duration, and legal basis of the processing of personal data, insofar as we decide alone or jointly with others on the purposes and means of processing. We also inform you below about the third-party components we use for optimization purposes and to increase the quality of use, provided that third parties process data under their own responsibility.</p>
+    </div>
+</div>
+
+<script>
+    // JavaScript to toggle language content
+    const germanFlag = document.getElementById('germanFlag');
+    const englishFlag = document.getElementById('englishFlag');
+    const germanContent = document.getElementById('germanContent');
+    const englishContent = document.getElementById('englishContent');
+
+    germanFlag.addEventListener('click', () => {
+        germanContent.classList.remove('hidden');
+        englishContent.classList.add('hidden');
+    });
+
+    englishFlag.addEventListener('click', () => {
+        germanContent.classList.add('hidden');
+        englishContent.classList.remove('hidden');
+    });
+</script>
+
+</body>
+</html>
