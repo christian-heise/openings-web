@@ -19,7 +19,15 @@
         header span {
             cursor: pointer;
             font-size: 30px;
-            margin-left: 10px;
+            margin-left: 15px; /* Spacing between flags */
+            padding: 10px; /* Padding inside the buttons */
+            border: 2px solid transparent; /* Initial no border */
+            border-radius: 5px; /* Rounded corners to look like buttons */
+            transition: all 0.3s ease; /* Smooth transition for hover effect */
+        }
+        header span:hover {
+            border-color: #ccc; /* Add a border on hover to make it look clickable */
+            background-color: #f0f0f0; /* Slight background change on hover */
         }
         .content {
             max-width: 800px;
@@ -42,8 +50,8 @@
 
 <!-- Language Switcher -->
 <header>
-    <span id="germanFlag">🇩🇪</span>
-    <span id="englishFlag">🇺🇸</span>
+    <span id="germanFlag" title="Deutsch">🇩🇪</span>
+    <span id="englishFlag" title="English">🇺🇸</span>
 </header>
 
 <!-- Content Section -->
