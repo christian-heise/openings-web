@@ -63,11 +63,23 @@
 </div>
 
 <script>
+    // Function to initialize language switching after loading the header
+    function initializeLanguageSwitcher() {
+        document.querySelector('[title="Deutsch"]').addEventListener('click', function() {
+            window.location.href = 'german.html'; // Switch to German
+        });
+
+        document.querySelector('[title="English"]').addEventListener('click', function() {
+            window.location.href = 'index.html'; // Switch to English (default)
+        });
+    }
+
     // Load the external header
     fetch('header.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
+            initializeLanguageSwitcher(); // Attach the language switch functionality after loading header
         });
 </script>
 
